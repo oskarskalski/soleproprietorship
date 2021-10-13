@@ -28,12 +28,8 @@ public class GetRevenueOpsService implements GetRevenueOps {
     }
 
     @Override
-    public List<Revenue> findRevenueObjectListByRangeAndRightDirection(int range) {
-        return fakeRevenueRepo.getRevenueListByRange(range, "finish");
+    public List<Revenue> findAllRevenueObjectsByOrderAndRange(String orderBy, int range) {
+        return fakeRevenueRepo.findAllRevenueObjectsByRangeOrderBy(range, orderBy);
     }
 
-    @Override
-    public List<Revenue> findRevenueObjectListByRangeAndLeftDirection(int range) {
-        return fakeRevenueRepo.getRevenueListByRange(range, "start");
-    }
 }

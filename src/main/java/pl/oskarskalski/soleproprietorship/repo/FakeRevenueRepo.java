@@ -22,7 +22,7 @@ public class FakeRevenueRepo {
         return fakeRevenueDB;
     }
 
-    public List<Revenue> getRevenueListByRange(int range, String beginFrom){
+    public List<Revenue> findAllRevenueObjectsByRangeOrderBy(int range, String beginFrom){
         List<Revenue> revenueList;
         if(beginFrom.equals("start")){
             revenueList = fakeRevenueDB.subList(0, range - 1);

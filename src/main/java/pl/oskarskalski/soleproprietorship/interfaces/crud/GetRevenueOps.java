@@ -7,6 +7,5 @@ import java.util.Optional;
 
 public interface GetRevenueOps {
     List<Revenue> findAllRevenueObjects();
-    List<Revenue> findRevenueObjectListByRangeAndRightDirection(int range);
-    List<Revenue> findRevenueObjectListByRangeAndLeftDirection(int range);
+    List<Revenue> findAllRevenueObjectsByOrderAndRange(String order, int range);
 }
