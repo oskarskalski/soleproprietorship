@@ -2,6 +2,7 @@ package pl.oskarskalski.soleproprietorship.service.revenue;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pl.oskarskalski.soleproprietorship.exceptions.BadRequestException;
 import pl.oskarskalski.soleproprietorship.exceptions.NotFoundException;
 import pl.oskarskalski.soleproprietorship.interfaces.crud.GetRevenueOps;
 import pl.oskarskalski.soleproprietorship.model.Revenue;
@@ -29,7 +30,15 @@ public class GetRevenueOpsService implements GetRevenueOps {
 
     @Override
     public List<Revenue> findAllRevenueObjectsByOrderAndRange(String orderBy, int range) {
-        return fakeRevenueRepo.findAllRevenueObjectsByRangeOrderBy(range, orderBy);
+        if(range < 0)
+            throw new BadRequestException();
+
+        List<Revenue> revenueList = fakeRevenueRepo.findAllRevenueObjectsByRangeOrderBy(range, orderBy);
+
+        if(revenueList.size() == 0)
+            throw new NotFoundException();
+
+        return revenueList;
     }
 
 }
