@@ -2,7 +2,9 @@ package pl.oskarskalski.soleproprietorship.service.revenue;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pl.oskarskalski.soleproprietorship.exceptions.NotFoundException;
 import pl.oskarskalski.soleproprietorship.interfaces.crud.GetRevenueOps;
+import pl.oskarskalski.soleproprietorship.model.Revenue;
 import pl.oskarskalski.soleproprietorship.repo.FakeRevenueRepo;
 
 import java.util.List;
@@ -17,17 +19,21 @@ public class GetRevenueOpsService implements GetRevenueOps {
     }
 
     @Override
-    public List<Object> getAllRevenueObjects() {
-        return fakeRevenueRepo.getAllRevenueList();
+    public List<Revenue> findAllRevenueObjects() {
+        List<Revenue> revenueList = fakeRevenueRepo.getAllRevenueList();
+        if(revenueList.size() == 0)
+            throw new NotFoundException();
+
+        return revenueList;
     }
 
     @Override
-    public List<Object> getRevenueObjectListByRangeAndRightDirection(int range) {
+    public List<Revenue> findRevenueObjectListByRangeAndRightDirection(int range) {
         return fakeRevenueRepo.getRevenueListByRange(range, "finish");
     }
 
     @Override
-    public List<Object> getRevenueObjectListByRangeAndLeftDirection(int range) {
+    public List<Revenue> findRevenueObjectListByRangeAndLeftDirection(int range) {
         return fakeRevenueRepo.getRevenueListByRange(range, "start");
     }
 }

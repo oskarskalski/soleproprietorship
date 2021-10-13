@@ -1,15 +1,16 @@
 package pl.oskarskalski.soleproprietorship.repo;
 
 import org.springframework.stereotype.Repository;
+import pl.oskarskalski.soleproprietorship.model.Revenue;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Repository
 public class FakeRevenueRepo {
-    private final static List<Object> fakeRevenueDB = new ArrayList<>();
+    private final static List<Revenue> fakeRevenueDB = new ArrayList<>();
 
-    public void add(Object revenueObject){
+    public void add(Revenue revenueObject){
         fakeRevenueDB.add(revenueObject);
     }
 
@@ -17,12 +18,12 @@ public class FakeRevenueRepo {
         return fakeRevenueDB.size();
     }
 
-    public List<Object> getAllRevenueList(){
+    public List<Revenue> getAllRevenueList(){
         return fakeRevenueDB;
     }
 
-    public List<Object> getRevenueListByRange(int range, String beginFrom){
-        List<Object> revenueList;
+    public List<Revenue> getRevenueListByRange(int range, String beginFrom){
+        List<Revenue> revenueList;
         if(beginFrom.equals("start")){
             revenueList = fakeRevenueDB.subList(0, range - 1);
         }else{
