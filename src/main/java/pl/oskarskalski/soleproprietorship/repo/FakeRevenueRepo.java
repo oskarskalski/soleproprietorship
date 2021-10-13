@@ -1,6 +1,7 @@
 package pl.oskarskalski.soleproprietorship.repo;
 
 import org.springframework.stereotype.Repository;
+import pl.oskarskalski.soleproprietorship.exceptions.BadRequestException;
 import pl.oskarskalski.soleproprietorship.model.Revenue;
 
 import java.util.ArrayList;
@@ -22,14 +23,24 @@ public class FakeRevenueRepo {
         return fakeRevenueDB;
     }
 
-    public List<Revenue> findAllRevenueObjectsByRangeOrderBy(int range, String beginFrom){
-        List<Revenue> revenueList;
-        if(beginFrom.equals("start")){
+    public List<Revenue> findAllRevenueObjectsByRangeOrderBy(int range, String order){
+        List<Revenue> revenueList = null;
+
+        if(range <= 0)
+            throw new BadRequestException();
+
+        if(range >= getDBSize())
+            return fakeRevenueDB;
+
+        if(order.equals("desc")){
             revenueList = fakeRevenueDB.subList(0, range - 1);
-        }else{
+        }else if(order.equals("asc")){
             int startCopyDBAt = getDBSize() - range - 1;
             revenueList = fakeRevenueDB.subList(startCopyDBAt, getDBSize());
         }
+
+        if(revenueList == null)
+            throw new BadRequestException();
 
         return revenueList;
     }

@@ -6,13 +6,13 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.5.5</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath/>
 	</parent>
 	<groupId>pl.oskarskalski</groupId>
 	<artifactId>soleproprietorship</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>soleproprietorship</name>
-	<description>Project made for recruitee process at Qiagen</description>
+	<description>Project made for recruiter process at Qiagen</description>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>

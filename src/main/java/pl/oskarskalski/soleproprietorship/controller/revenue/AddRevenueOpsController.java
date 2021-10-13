@@ -1,4 +1,4 @@
-package pl.oskarskalski.soleproprietorship.controller;
+package pl.oskarskalski.soleproprietorship.controller.revenue;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,6 +19,7 @@ public class AddRevenueOpsController {
 
     @PostMapping("/add/{revenueAmount}")
     public void addRevenue(@PathVariable double revenueAmount){
+        System.out.println("test");
         addRevenueOpsService.addRevenueObject(revenueAmount);
     }
 }

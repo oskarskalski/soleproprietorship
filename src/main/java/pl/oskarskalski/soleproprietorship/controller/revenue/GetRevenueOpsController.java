@@ -1,4 +1,4 @@
-package pl.oskarskalski.soleproprietorship.controller;
+package pl.oskarskalski.soleproprietorship.controller.revenue;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

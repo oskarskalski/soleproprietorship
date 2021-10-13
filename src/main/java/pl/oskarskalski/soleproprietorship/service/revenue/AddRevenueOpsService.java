@@ -31,7 +31,7 @@ public class AddRevenueOpsService implements AddRevenueOps {
         double zusAmount = ZUS.ZUS_AMOUNT;
         double[] paymentAmounts = new double[]{taxAmount, zusAmount};
 
-        double netRevenueAmount = netRevenueCalculator.calculateNetRevenue(revenueAmount, paymentAmounts);
+        double netRevenueAmount = netRevenueCalculator.calculateNetRevenueAmount(revenueAmount, paymentAmounts);
 
         Revenue revenueObject = new Revenue();
         revenueObject.setRevenueGrossAmount(revenueAmount);
