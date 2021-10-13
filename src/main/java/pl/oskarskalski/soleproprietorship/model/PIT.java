@@ -10,18 +10,22 @@ public class PIT {
     }
 
     public double calculateTaxAmount(double revenue) {
-        int convertTaxPercentToIntValue = (int) (currentTaxPercent * 100);
-        int convertRevenueAmountToIntValue = (int) (revenue * 100);
-
-        int taxAmount = convertRevenueAmountToIntValue * convertTaxPercentToIntValue;
-
-        return ((double) taxAmount) / 100;
+        BigDecimal revenueAmountAsBD = new BigDecimal(revenue);
+        BigDecimal taxPercentAsBG = new BigDecimal(currentTaxPercent);
+        BigDecimal result = revenueAmountAsBD.multiply(taxPercentAsBG);
+        return result.doubleValue();
     }
 
-//    public double calculateTaxAmount(double revenue){
-//        BigDecimal revenueAmountAsBD = new BigDecimal(revenue);
-//        BigDecimal taxPercentAsBG = new BigDecimal(currentTaxPercent);
-//        BigDecimal result = revenueAmountAsBD.multiply(taxPercentAsBG);
-//        return result.doubleValue();
+//    See NetRevenueCalculator.java file to see some explanation about this code
+
+//    public double calculateTaxAmount(double revenue) {
+//        int convertTaxPercentToIntValue = (int) (currentTaxPercent * 100);
+//        int convertRevenueAmountToIntValue = (int) (revenue * 100);
+//
+//        int taxAmount = convertRevenueAmountToIntValue * convertTaxPercentToIntValue;
+//
+//        return ((double) taxAmount) / 100;
 //    }
+
+
 }
