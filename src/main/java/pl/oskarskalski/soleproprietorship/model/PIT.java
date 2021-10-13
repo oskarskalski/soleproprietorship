@@ -18,14 +18,6 @@ public class PIT {
 
 //    See NetRevenueCalculator.java file to see some explanation about this code
 
-//    public double calculateTaxAmount(double revenue) {
-//        int convertTaxPercentToIntValue = (int) (currentTaxPercent * 100);
-//        int convertRevenueAmountToIntValue = (int) (revenue * 100);
-//
-//        int taxAmount = convertRevenueAmountToIntValue * convertTaxPercentToIntValue;
-//
-//        return ((double) taxAmount) / 100;
-//    }
 
 
 }
