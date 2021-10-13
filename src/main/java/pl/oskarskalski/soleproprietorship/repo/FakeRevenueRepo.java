@@ -9,7 +9,7 @@ import java.util.List;
 public class FakeRevenueRepo {
     private final static List<Object> fakeRevenueDB = new ArrayList<>();
 
-    public void addRevenueObject(Object revenueObject){
+    public void add(Object revenueObject){
         fakeRevenueDB.add(revenueObject);
     }
 

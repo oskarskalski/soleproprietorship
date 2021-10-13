@@ -2,6 +2,7 @@ package pl.oskarskalski.soleproprietorship.service.revenue;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pl.oskarskalski.soleproprietorship.exceptions.BadRequestException;
 import pl.oskarskalski.soleproprietorship.features.NetRevenueCalculator;
 import pl.oskarskalski.soleproprietorship.interfaces.crud.AddRevenueOps;
 import pl.oskarskalski.soleproprietorship.model.PIT;
@@ -20,6 +21,9 @@ public class AddRevenueOpsService implements AddRevenueOps {
 
     @Override
     public void addRevenueObject(double revenueAmount) {
+        if(revenueAmount < 0)
+            throw new BadRequestException();
+
         PIT pit = new PIT();
         NetRevenueCalculator netRevenueCalculator = new NetRevenueCalculator();
 
@@ -36,7 +40,6 @@ public class AddRevenueOpsService implements AddRevenueOps {
         revenueObject.setTaxAmount(taxAmount);
         revenueObject.setZusAmount(zusAmount);
 
-
-        fakeRevenueRepo.addRevenueObject(revenueObject);
+        fakeRevenueRepo.add(revenueObject);
     }
 }
