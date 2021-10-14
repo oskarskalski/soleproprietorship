@@ -25,7 +25,6 @@ After choosing first or second way, now you can send http requests to this appli
 ## Sending request to the application
 
 After choosing first or second way, now you can send http requests to this application.
-## Sending request to the application
 
 ### POST Requests
 
