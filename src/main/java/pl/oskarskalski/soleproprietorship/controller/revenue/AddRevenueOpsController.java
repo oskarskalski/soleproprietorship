@@ -19,7 +19,6 @@ public class AddRevenueOpsController {
 
     @PostMapping("/add/{revenueAmount}")
     public void addRevenue(@PathVariable double revenueAmount){
-        System.out.println("test");
         addRevenueOpsService.addRevenueObject(revenueAmount);
     }
 }
