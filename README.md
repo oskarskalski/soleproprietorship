@@ -29,6 +29,8 @@ After choosing first or second way, now you can send http requests to this appli
 After choosing first or second way, now you can send http requests to this application.
 We can use aplication like POSTMAN to send request to this aplication. Even you can use browser to get data but for now it only works for get method requests. If we would need send http request like put/post/delete, etc.. using for example javacript, it would need modify CORS policy in the spring boot application. By default it is blocked. 
 
+Also in features/NetRevenueCalculator.java file there's some explanation about the floating-point issue and why there's used BigDecimal objects. 
+
 ### POST Requests
 
 If we want to add revenue amount to this application, we have to send request with POST method on this url:
