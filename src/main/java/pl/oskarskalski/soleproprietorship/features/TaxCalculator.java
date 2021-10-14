@@ -11,6 +11,4 @@ public class TaxCalculator {
     }
 
 //    See NetRevenueCalculator.java file to see some explanation about this code
-
-
 }

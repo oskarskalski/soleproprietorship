@@ -1,6 +1,7 @@
 package pl.oskarskalski.soleproprietorship.features;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 public class NetRevenueCalculator {
     public double calculateNetRevenueAmount(double revenue, double[] values) {
@@ -8,7 +9,7 @@ public class NetRevenueCalculator {
 
         for (double amount : values) {
             BigDecimal amountAsBD = new BigDecimal(amount);
-            revenueAsBD = revenueAsBD.subtract(amountAsBD);
+            revenueAsBD = revenueAsBD.subtract(amountAsBD).setScale(2, RoundingMode.HALF_EVEN);
         }
 
         return revenueAsBD.doubleValue();

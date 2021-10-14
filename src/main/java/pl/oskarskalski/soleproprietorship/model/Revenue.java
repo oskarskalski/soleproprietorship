@@ -1,11 +1,22 @@
 package pl.oskarskalski.soleproprietorship.model;
 
+import java.util.Date;
+
 public class Revenue {
     private double revenueGrossAmount;
     private double revenueNetAmount;
     private double zusAmount;
     private double taxPercent;
     private double taxAmount;
+    private String date;
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
 
     public double getRevenueGrossAmount() {
         return revenueGrossAmount;

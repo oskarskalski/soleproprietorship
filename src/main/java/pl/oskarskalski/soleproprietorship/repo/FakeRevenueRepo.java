@@ -33,9 +33,9 @@ public class FakeRevenueRepo {
             return fakeRevenueDB;
 
         if(order.equals("desc")){
-            revenueList = fakeRevenueDB.subList(0, range - 1);
+            revenueList = fakeRevenueDB.subList(0, range);
         }else if(order.equals("asc")){
-            int startCopyDBAt = getDBSize() - range - 1;
+            int startCopyDBAt = getDBSize() - range;
             revenueList = fakeRevenueDB.subList(startCopyDBAt, getDBSize());
         }
 

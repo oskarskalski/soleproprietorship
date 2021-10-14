@@ -11,6 +11,9 @@ import pl.oskarskalski.soleproprietorship.model.Revenue;
 import pl.oskarskalski.soleproprietorship.model.ZUS;
 import pl.oskarskalski.soleproprietorship.repo.FakeRevenueRepo;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 @Service
 public class AddRevenueOpsService implements AddRevenueOps {
     private final FakeRevenueRepo fakeRevenueRepo;
@@ -35,13 +38,16 @@ public class AddRevenueOpsService implements AddRevenueOps {
 
         double netRevenueAmount = netRevenueCalculator.calculateNetRevenueAmount(revenueAmount, paymentAmounts);
 
+        Date date = new Date();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
         Revenue revenueObject = new Revenue();
         revenueObject.setRevenueGrossAmount(revenueAmount);
         revenueObject.setRevenueNetAmount(netRevenueAmount);
         revenueObject.setTaxPercent(pit.getCurrentTaxPercent());
         revenueObject.setTaxAmount(taxAmount);
         revenueObject.setZusAmount(zusAmount);
-
+        revenueObject.setDate(simpleDateFormat.format(date));
         fakeRevenueRepo.add(revenueObject);
     }
 }
