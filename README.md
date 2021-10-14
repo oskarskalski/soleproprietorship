@@ -27,6 +27,7 @@ After choosing first or second way, now you can send http requests to this appli
 ## Sending request to the application
 
 After choosing first or second way, now you can send http requests to this application.
+We can use aplication like POSTMAN to send request to this aplication. Even you can use browser to get data but for now it only works for get method requests. If we would need send http request like put/post/delete, etc.. using for example javacript, it would need modify CORS policy in the spring boot application. By default it is blocked. 
 
 ### POST Requests
 
@@ -99,7 +100,7 @@ Result:
         "revenueNetAmount": 538619.28,
         "zusAmount": 1380.18,
         "taxPercent": 0.19,
-        "taxAmount": 126666.54000000001,
+        "taxAmount": 126666.54,
         "date": "2021-10-14 15:11:29"
     },
     {
@@ -107,7 +108,7 @@ Result:
         "revenueNetAmount": 61619.19,
         "zusAmount": 1380.18,
         "taxPercent": 0.19,
-        "taxAmount": 14777.630000000001,
+        "taxAmount": 14777.63,
         "date": "2021-10-14 15:11:31"
     },
     {
