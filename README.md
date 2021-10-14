@@ -6,8 +6,11 @@ There's two ways to run this application.
 Pull this project using git
 
 ```git pull https://github.com/oskarskalski/soleproprietorship```
+
 Then open this project folder. Go to target folder. There's a .jar file named soleproprietorship-0.0.1-SNAPSHOT.jar. We can run this application in cmd using this command:
+
 ```java -jar soleproprietorship-0.0.1-SNAPSHOT.jar ```
+
 2.
 Another way to run this project is by using docker
 Download docker for computers. Then open cmd and by using this commands:
@@ -22,7 +25,6 @@ After choosing first or second way, now you can send http requests to this appli
 ## Sending request to the application
 
 After choosing first or second way, now you can send http requests to this application.
-## Sending request to the application
 
 ### POST Requests
 
@@ -135,7 +137,7 @@ Also there's another endpoint which on we can get data from start or end of the 
 
 Url example with result:
 
-``` http://localhost:8080/api/revenue/range/{5}/{desc} ```
+``` http://localhost:8080/api/revenue/range/5/desc ```
 
 ```yml
 {
@@ -187,7 +189,7 @@ Url example with result:
 
 Url example with result:
 
-``` http://localhost:8080/api/revenue/range/{5}/{asc} ```
+``` http://localhost:8080/api/revenue/range/5/asc ```
 
 
 ```yml
