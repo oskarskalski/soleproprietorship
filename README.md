@@ -137,7 +137,7 @@ Also there's another endpoint which on we can get data from start or end of the 
 
 Url example with result:
 
-``` http://localhost:8080/api/revenue/range/{5}/{desc} ```
+``` http://localhost:8080/api/revenue/range/5/desc ```
 
 ```yml
 {
@@ -189,7 +189,7 @@ Url example with result:
 
 Url example with result:
 
-``` http://localhost:8080/api/revenue/range/{5}/{asc} ```
+``` http://localhost:8080/api/revenue/range/5/asc ```
 
 
 ```yml
