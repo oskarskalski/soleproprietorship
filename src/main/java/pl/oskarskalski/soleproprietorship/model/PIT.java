@@ -8,16 +8,4 @@ public class PIT {
     public double getCurrentTaxPercent() {
         return currentTaxPercent;
     }
-
-    public double calculateTaxAmount(double revenue) {
-        BigDecimal revenueAmountAsBD = new BigDecimal(revenue);
-        BigDecimal taxPercentAsBG = new BigDecimal(currentTaxPercent);
-        BigDecimal result = revenueAmountAsBD.multiply(taxPercentAsBG);
-        return result.doubleValue();
-    }
-
-//    See NetRevenueCalculator.java file to see some explanation about this code
-
-
-
 }

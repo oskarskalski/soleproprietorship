@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pl.oskarskalski.soleproprietorship.exceptions.BadRequestException;
 import pl.oskarskalski.soleproprietorship.features.NetRevenueCalculator;
+import pl.oskarskalski.soleproprietorship.features.TaxCalculator;
 import pl.oskarskalski.soleproprietorship.interfaces.crud.AddRevenueOps;
 import pl.oskarskalski.soleproprietorship.model.PIT;
 import pl.oskarskalski.soleproprietorship.model.Revenue;
@@ -26,8 +27,9 @@ public class AddRevenueOpsService implements AddRevenueOps {
 
         PIT pit = new PIT();
         NetRevenueCalculator netRevenueCalculator = new NetRevenueCalculator();
+        TaxCalculator taxCalculator = new TaxCalculator();
 
-        double taxAmount = pit.calculateTaxAmount(revenueAmount);
+        double taxAmount = taxCalculator.calculateTaxAmount(pit.getCurrentTaxPercent(), revenueAmount);
         double zusAmount = ZUS.ZUS_AMOUNT;
         double[] paymentAmounts = new double[]{taxAmount, zusAmount};
 
