@@ -19,6 +19,8 @@ Download docker for computers. Then open cmd and by using this commands:
 
 ``` docker run -it -p 8080:8080 oskarskalski/soleproprietorship:latest ```
 
+https://hub.docker.com/r/oskarskalski/soleproprietorship
+
 If there's problem with hyper-v, it is nessecery to turn it off in BIOS system. 
 After choosing first or second way, now you can send http requests to this application.
 
